@@ -7,6 +7,16 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "spa-react",
     webpackConfigEnv,
     argv,
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
   });
 
   return merge(defaultConfig, {});

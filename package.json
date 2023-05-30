@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@stencil/core": "3.3.0"
+  }
+}
