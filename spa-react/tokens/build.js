@@ -1,9 +1,9 @@
 const StyleDictionary = require("style-dictionary").extend({
-  source: ["token.json"],
+  source: ["tokens/token.json"],
   platforms: {
     scss: {
       transformGroup: "scss",
-      buildPath: "../src/styles/",
+      buildPath: "./src/styles/",
       files: [
         {
           destination: "_colors.scss",
@@ -12,22 +12,8 @@ const StyleDictionary = require("style-dictionary").extend({
             type: "color"
           }
         },
-        {
-          destination: "_typography.scss",
-          format: "scss/variables",
-          filter: {
-            type: "typography"
-          }
-        },
-        {
-          destination: "_grid.scss",
-          format: "custom/breakpoints",
-          filter: {
-            type: "grid"
-          }
-        }
+    
       ],
-      actions: ["copy_assets"]
     },
   }
 });

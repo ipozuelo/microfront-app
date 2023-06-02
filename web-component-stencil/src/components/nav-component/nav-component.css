@@ -1,0 +1,12 @@
+:host {
+  display: block;
+
+}
+
+nav {
+  float: left;
+  border: 2px solid blue;
+  border-radius: 2px;
+  max-width: 200px;
+  max-height: 100px;
+}

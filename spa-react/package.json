@@ -1,8 +1,8 @@
 {
   "name": "@spa-react/spa-react",
   "scripts": {
-    "start": "webpack serve",
-    "start:standalone": "webpack serve --env standalone",
+    "start": " webpack serve",
+    "start:standalone": "node ./tokens/build.js && webpack serve --env standalone",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",

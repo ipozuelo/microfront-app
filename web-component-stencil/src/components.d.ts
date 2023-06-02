@@ -22,6 +22,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface NavComponent {
+    }
 }
 declare global {
     interface HTMLAnotherComponentElement extends Components.AnotherComponent, HTMLStencilElement {
@@ -36,9 +38,16 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLNavComponentElement extends Components.NavComponent, HTMLStencilElement {
+    }
+    var HTMLNavComponentElement: {
+        prototype: HTMLNavComponentElement;
+        new (): HTMLNavComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "another-component": HTMLAnotherComponentElement;
         "my-component": HTMLMyComponentElement;
+        "nav-component": HTMLNavComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -58,9 +67,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface NavComponent {
+    }
     interface IntrinsicElements {
         "another-component": AnotherComponent;
         "my-component": MyComponent;
+        "nav-component": NavComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -69,6 +81,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "another-component": LocalJSX.AnotherComponent & JSXBase.HTMLAttributes<HTMLAnotherComponentElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "nav-component": LocalJSX.NavComponent & JSXBase.HTMLAttributes<HTMLNavComponentElement>;
         }
     }
 }
